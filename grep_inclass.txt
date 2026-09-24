@@ -1,0 +1,96 @@
+
+[fan.zac@explorer-02 shared]$ cd ../misc/
+[fan.zac@explorer-02 misc]$ ls
+grep_exercise.txt  perm_example.txt
+[fan.zac@explorer-02 misc]$ cp grep_exercise.txt ../students/fan.zac/in_class_work/
+[fan.zac@explorer-02 misc]$ cd ../students/fan.zac/in_class_work/
+[fan.zac@explorer-02 in_class_work]$ ls
+01_in_class_exer_Zach.txt  1_aa_names_project  fastq_files  grep_exercise.txt
+#copied file
+
+[fan.zac@explorer-02 in_class_work]$ grep ">" grep_exercise.txt 
+>seq1_wildtype
+>seq2_mutant
+>seq3_wildtype
+>seq4_control
+[fan.zac@explorer-02 in_class_work]$ cat grep_exercise.txt 
+>seq1_wildtype
+ATGGCTAGCTAGGGATCCGAATTCGCGCTAGC
+>seq2_mutant
+ATGGCTAGCTAGGGATCCTAATTCGCGCTAGC
+>seq3_wildtype
+ATGCCCGGGAATTCGATCGATCGGGCCATGCA
+>seq4_control
+NNNATGGCTAGCTAGGATCCGAATTCGCGATG
+[fan.zac@explorer-02 in_class_work]$ grep -c ">" grep_exercise.txt 
+4
+[fan.zac@explorer-02 in_class_work]$ grep "GAATTC" grep_exercise.txt 
+ATGGCTAGCTAGGGATCCGAATTCGCGCTAGC
+ATGCCCGGGAATTCGATCGATCGGGCCATGCA
+NNNATGGCTAGCTAGGATCCGAATTCGCGATG
+
+[fan.zac@c0607 in_class_work]$ grep "" grep_exercise.txt |less
+#using less to make search easier
+[fan.zac@c0607 in_class_work]$ grep -v "GGATCC" grep_exercise.txt 
+>seq1_wildtype
+>seq2_mutant
+>seq3_wildtype
+ATGCCCGGGAATTCGATCGATCGGGCCATGCA
+>seq4_control
+[fan.zac@c0607 in_class_work]$ grep "" grep_exercise.txt |less
+[fan.zac@c0607 in_class_work]$ grep "N" grep_exercise.txt 
+NNNATGGCTAGCTAGGATCCGAATTCGCGATG
+[fan.zac@c0607 in_class_work]$ grep -o "" grep_exercise.txt 
+[fan.zac@c0607 in_class_work]$ grep -o "ATC" grep_exercise.txt 
+ATC
+ATC
+ATC
+ATC
+ATC
+[fan.zac@c0607 in_class_work]$ grep -o "G" grep_exercise.txt 
+G
+G
+G
+G
+G
+G
+G
+G
+G
+G
+G
+G
+G
+G
+G
+G
+G
+G
+G
+G
+G
+G
+G
+G
+G
+G
+G
+G
+G
+G
+G
+G
+G
+G
+G
+G
+G
+G
+[fan.zac@c0607 in_class_work]$ grep -o "G" grep_exercise.txt | wc -l
+38
+[fan.zac@c0607 in_class_work]$ exit
+exit
+[fan.zac@explorer-02 in_class_work]$ exit
+logout
+Connection to login.explorer.northeastern.edu closed.
+zachfan@Zachs-MacBook-Pro ~ % 

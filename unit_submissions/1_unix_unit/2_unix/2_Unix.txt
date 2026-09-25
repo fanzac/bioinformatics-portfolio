@@ -1,0 +1,161 @@
+Last login: Tue Sep 22 17:00:13 on ttys000
+zachfan@Zachs-MacBook-Pro ~ % ssh fan.zac@login.explorer.northeastern.edu
+fan.zac@login.explorer.northeastern.edu's password: 
+Last login: Tue Sep 22 15:55:01 2026 from 10.110.183.99
+    _______  __ ____  __    ____  ____  __________
+   / ____/ |/ // __ \/ /   / __ \/ __ \/ ____/ __ \
+  / __/  |   // /_/ / /   / / / / /_/ / __/ / /_/ /
+ / /___ /   |/ ____/ /___/ /_/ / _, _/ /___/ _, _/
+/_____//_/|_/_/   /_____/\____/_/ |_/_____/_/ |_|
+
++-----------------------------------------------------------+
+| You're now connected to the Explorer cluster. Visit our   |
+| website http://rc.northeastern.edu/support for links to   |
+| our service catalog, documentation, training, and consul- |
+| tations. You can also email us at rchelp@northeastern.edu |
+| to generate a help ticket.                                |
+|                                                           |
+| The Research Computing Team                               |
++-----------------------------------------------------------+
+
+The Research Computing team is thrilled to share that a new, state-of-the-art HPC cluster is coming soon to the Northeastern research computing community. All Northeastern faculty and PIs are eligible to submit a proposal, especially those who already use GPUs on the Explorer and Discovery HPC clusters.                                                                                                                                                                   
+If you are a student or researcher who is a current Explorer HPC cluster user, we highly encourage you to reach out to your account sponsor (faculty or PI) to make a submission.
+
+The application process is here: https://forms.gle/eTPsdQZN25efoJ3g6
+If you have questions or feedback, please email d.tiwari@northeastern.edu.
+
+#task 1
+[fan.zac@explorer-02 ~]$ cd ../../courses/BIOL2406.202710/data
+[fan.zac@explorer-02 data]$ ls
+At_prot_abr.fasta  Sea_cuke
+#data not there gonna upload off github
+
+zachfan@Zachs-MacBook-Pro ~ % scp -r ~/Desktop/2unixfiles/ fan.zac@xfer.discovery.neu.edu:/home/fan.zac
+fan.zac@xfer.discovery.neu.edu's password: 
+At_genes.gff.gz                                    100% 4495KB  11.8MB/s   00:00    
+intron_IME_data.fasta                              100%   11MB  15.0MB/s   00:00    
+At_proteins.fasta                                  100%   17MB  15.4MB/s   00:01    
+chr1.fasta.gz                                      100% 8870KB  15.2MB/s   00:00    
+excel_data.csv                                     100%  118     7.4KB/s   00:00  
+#upload done now to move it
+
+[fan.zac@explorer-02 ~]$ mv 2unixfiles/ /../../courses/BIOL2406.202710/students/fan.zac/
+[fan.zac@explorer-02 ~]$ cd  /../../courses/BIOL2406.202710/students/fan.zac/
+[fan.zac@explorer-02 fan.zac]$ ls
+2unixfiles  in_class_work
+
+#task 2
+[fan.zac@explorer-02 2unixfiles]$ #AC.*GT has most then AC*GT,AC.GT,ACGT 
+[fan.zac@explorer-02 2unixfiles]$ grep "AC.*GT" intron_IME_data.fasta |less 
+[fan.zac@explorer-02 2unixfiles]$ #AC.GT had fewer than I expected almost as little as ACGT #other than that as expected
+[fan.zac@explorer-02 2unixfiles]$ # . is an empty place holder * will look for whatever was #before it an infinite amount of times then what comes after. in our example AC*GT it will look #for A then any number of Cs then GT
+
+[fan.zac@explorer-02 2unixfiles]$ grep -c "ACGT" *.fasta
+At_proteins.fasta:70
+intron_IME_data.fasta:11924
+[fan.zac@explorer-02 2unixfiles]$ grep -c "AC.GT" *.fasta
+At_proteins.fasta:47
+intron_IME_data.fasta:17998
+[fan.zac@explorer-02 2unixfiles]$ grep -c "AC*GT" *.fasta
+At_proteins.fasta:2600
+intron_IME_data.fasta:103917
+[fan.zac@explorer-02 2unixfiles]$ grep -c "AC.*GT" *.fasta
+At_proteins.fasta:1308
+intron_IME_data.fasta:124464
+[fan.zac@explorer-02 2unixfiles]$ grep -c "AC*.GT" *.fasta
+At_proteins.fasta:2596
+intron_IME_data.fasta:112465
+[fan.zac@explorer-02 2unixfiles]$ 
+
+#task 4
+[fan.zac@explorer-02 2unixfiles]$ grep "ATCGTAG" intron_IME_data.fasta |less
+
+#task 5
+[fan.zac@explorer-02 2unixfiles]$ head -n 2 intron_IME_data.fasta 
+>AT1G68260.1_i1_204_CDS
+GTATACACATCTCTCTACTTTCATATTTTGCATCTCTAACGAAATCGGATTCCGTCGTTG
+[fan.zac@explorer-02 2unixfiles]$ head -n 2 intron_IME_data.fasta | tr 'A-Z' 'a-z'
+>at1g68260.1_i1_204_cds
+gtatacacatctctctactttcatattttgcatctctaacgaaatcggattccgtcgttg
+[fan.zac@explorer-02 2unixfiles]$ cat  intron_IME_data.fasta | tr 'A-Z' 'a-z' > smallcase_intron.fasta
+[fan.zac@explorer-02 2unixfiles]$ head -n 2 smallcase_intron.fasta 
+>at1g68260.1_i1_204_cds
+gtatacacatctctctactttcatattttgcatctctaacgaaatcggattccgtcgttg
+[fan.zac@explorer-02 2unixfiles]$ 
+
+#task 6
+[fan.zac@explorer-02 2unixfiles]$ head -n 1 intron_IME_data.fasta 
+>AT1G68260.1_i1_204_CDS
+[fan.zac@explorer-02 2unixfiles]$ head -n 1 intron_IME_data.fasta | sed 's/AT1G68260.1/hi/'
+>hi_i1_204_CDS
+
+#task 7
+[fan.zac@explorer-02 2unixfiles]$ tail -n 500 At_genes.gff > short_At_genes.gff
+[fan.zac@explorer-02 2unixfiles]$ ls
+At_genes.gff       chr1.fasta      intron_IME_data.fasta  smallcase_intron.fasta
+At_proteins.fasta  excel_data.csv  short_At_genes.gff
+[fan.zac@explorer-02 2unixfiles]$ 
+
+#task 8
+[fan.zac@explorer-02 2unixfiles]$ cut -f 2 short_At_genes.gff | sort | uniq | head -n 10
+TAIR8
+[fan.zac@explorer-02 2unixfiles]$ cut -f 2 short_At_genes.gff | sort | head -n 10
+TAIR8
+TAIR8
+TAIR8
+TAIR8
+TAIR8
+TAIR8
+TAIR8
+TAIR8
+TAIR8
+TAIR8
+
+[fan.zac@explorer-02 2unixfiles]$ cut -f 1,3,4 short_At_genes.gff | sort  -k 3 | head -n 10
+ChrM	CDS	127475
+ChrM	exon	127475
+ChrM	protein	127475
+ChrM	CDS	129909
+ChrM	exon	129909
+ChrM	gene	129909
+ChrM	mRNA	129909
+ChrM	protein	129909
+ChrM	CDS	130817
+ChrM	exon	130817
+[fan.zac@explorer-02 2unixfiles]$ 
+
+#task 9
+[fan.zac@explorer-02 2unixfiles]$  tr '\n' '@' < intron_IME_data.fasta | sed 's/>/#>/g' | tr '#' '\n' | grep "i1_.*5UTR" | sort -nk 3 -t "_" | head -n 5 | tr '@' '\n'
+>AT4G39070.1_i1_7_5UTR
+GTGTGAAACCAAAACCAAAACAAGTCAATTTGGGGGCATTGAAAGCAAAGGAGAGAGTAG
+CTATCAAATCAAGAAAATGAGAGGAAGGAGTTAAAAAAGACAAAGGAAACCTAAGCTGCT
+TATCTATAAAGCCAACACATTATTCTTACCCTTTTGCCCACACTTATACCCCATCAACCT
+CTACATACACTCACCCACATGAGTGTCTCTACATAAACACTACTATATAGTACTGGTCCA
+AAGGTACAAGTTGAGGGAG
+
+>AT5G38430.1_i1_7_5UTR
+GCTTTTTGCCTCTTACGGTTCTCACTATATAAAGATGACAAAACCAATAGAAAAACAATT
+AAG
+
+>AT1G31820.1_i1_14_5UTR
+GTTTGTACTTCTTTACCTCTCGTAAATGTTTAGACTTTCGTATAAGGATCCAAGAATTTA
+TCTGATTGTTTTTTTTTCTTTGTTTCTTTGTGTTGATTCAG
+
+>AT3G12670.1_i1_18_5UTR
+GTAGAATTCGTAAATTTCTTCTGCTCACTTTATTGTTTCGACTCATACCCGATAATCTCT
+TCTATGTTTGGTAGAGATATCTTCTCAAAGTCTTATCTTTCCTTACCGTGTTCTGTGTTT
+TTTGATGATTTAG
+
+>AT1G26930.1_i1_19_5UTR
+GTATAATATGAGAGATAGACAAATGTAAAGAAAAACACAGAGAGAAAATTAGTTTAATTA
+ATCTCTCAAATATATACAAATATTAAAACTTCTTCTTCTTCAATTACAATTCTCATTCTT
+TTTTTCTTGTTCTTATATTGTAGTTGCAAGAAAGTTAAAAGATTTTGACTTTTCTTGTTT
+CAG
+#1 tr '\n' '@' < intron_IME_data.fasta :tr would translate and replace every newline character with an @ but since @ doesn't exist it makes it into one line.
+#2 sed 's/>/#>/g' this inserts a # before every > character
+#3 tr '#' '\n' converts the #s into a new line
+#4 grep "i1_.*5UTR" filters to keep only lines with i1_ then anything ending in 5UTR
+#5 sort -nk 3 -t "_" sorts -t"_" splits things into columns -k 3 sort using 3rd column -n numerically
+#6 head -n 5 only first 5 lines
+#7 tr '@' '\n' converts the @s back into new lines 
+

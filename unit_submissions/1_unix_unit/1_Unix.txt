@@ -1,0 +1,293 @@
+Last login: Tue Sep 15 19:52:32 on ttys000
+zachfan@Zachs-MacBook-Pro ~ % ls
+Applications		Library			Public
+Desktop			Movies			SimUText 2025-2026
+Documents		Music
+Downloads		Pictures
+#task 1 done
+
+zachfan@Zachs-MacBook-Pro ~ % cd /Users/zachfan/Desktop/Genome_analysis 
+zachfan@Zachs-MacBook-Pro Genome_analysis % cd ~
+zachfan@Zachs-MacBook-Pro ~ % cd /Users/zachfan/Desktop/Genome_analysis
+zachfan@Zachs-MacBook-Pro Genome_analysis % cd ../NS
+#task_2_done
+
+
+zachfan@Zachs-MacBook-Pro / % cd ~
+zachfan@Zachs-MacBook-Pro ~ % pwd
+/Users/zachfan
+zachfan@Zachs-MacBook-Pro ~ % cd /
+zachfan@Zachs-MacBook-Pro / % pwd
+/
+zachfan@Zachs-MacBook-Pro / % cd 
+zachfan@Zachs-MacBook-Pro ~ % pwd
+/Users/zachfan
+#task 3 done cd ~ is home cd / is very top
+
+zachfan@Zachs-MacBook-Pro ~ % ls -l
+total 0
+drwx------@  10 zachfan  staff   320 Mar 15  2026 Applications
+drwx------+  38 zachfan  staff  1216 Sep 15 20:36 Desktop
+
+zachfan@Zachs-MacBook-Pro Genome_analysis % ls -R
+01_in_class_exer_Zach.txt
+#last time I did ls -R in desktop and it had 10,000 lines of text
+zachfan@Zachs-MacBook-Pro Genome_analysis % cd ..
+zachfan@Zachs-MacBook-Pro Desktop % ls -l
+total 44800
+-rw-r--r--@  1 zachfan  staff     3458 Sep 15 20:36 1_Unix.txt
+drwxr-xr-x  16 zachfan  staff      512 Aug 23 12:04 Cannon Photos
+drwxr-xr-x  78 zachfan  staff     2496 Aug 29 16:30 Caroline Transfer
+
+zachfan@Zachs-MacBook-Pro Desktop % ls -l -t -r
+total 44800
+drwxr-xr-x  13 zachfan  staff      416 May 29  2025 untitled folder
+drwxr-xr-x  10 zachfan  staff      320 Jan 12  2026 Huh shoo
+-rw-r--r--@  1 zachfan  staff   690616 Jan 26  2026 Screenshot 2026-01-26 at 11.43.47 AM.png
+-rw-r--r--@  1 zachfan  staff   609444 Feb 17  2026 Screenshot 2026-02-17 at 4.43.01 PM.png
+
+zachfan@Zachs-MacBook-Pro Desktop % ls -lh
+total 44800
+-rw-r--r--@  1 zachfan  staff   3.4K Sep 15 20:36 1_Unix.txt
+drwxr-xr-x  16 zachfan  staff   512B Aug 23 12:04 Cannon Photos
+drwxr-xr-x  78 zachfan  staff   2.4K Aug 29 16:30 Caroline Transfer
+#task 4 done
+
+zachfan@Zachs-MacBook-Pro Desktop % mkdir -p temp1/temp2
+zachfan@Zachs-MacBook-Pro Desktop % cd /Users/zachfan/Desktop/temp1/temp2 
+zachfan@Zachs-MacBook-Pro temp2 % cd ~
+zachfan@Zachs-MacBook-Pro ~ % cd /Users/zachfan/Desktop/temp1/temp2
+zachfan@Zachs-MacBook-Pro temp2 % cd ../../Genome_analysis 
+zachfan@Zachs-MacBook-Pro Genome_analysis % 
+#task 5 done
+
+zachfan@Zachs-MacBook-Pro Desktop % cd ../downloads
+zachfan@Zachs-MacBook-Pro downloads % ls
+1111Unit4Lec5 - Genetic Disease and Biotechnology.pdf
+5760A9AF-F208-431E-9AEB-E5B98CEE08EA.JPG
+978-3-031-29294-1_2.pdf
+Assignment 1.pdf
+Assignment 2.pdf
+Assignment 3.pdf
+Assignment 4.pdf
+Bacterial ID Lab Instructions S23.pdf
+Biology Lab 1.docx
+
+Minecraft.dmg
+
+zachfan@Zachs-MacBook-Pro downloads % rm -r Minecraft.dmg
+#Task 6 done
+
+zachfan@Zachs-MacBook-Pro downloads % 
+
+Last login: Tue Sep 15 21:42:55 on ttys000
+zachfan@Zachs-MacBook-Pro ~ % cd Desktop 
+zachfan@Zachs-MacBook-Pro Desktop % mkdir unix
+zachfan@Zachs-MacBook-Pro Desktop % cd /Users/zachfan/Desktop/unix
+#Task 7 done
+
+
+zachfan@Zachs-MacBook-Pro unix % 
+zachfan@Zachs-MacBook-Pro unix % cd ../temp1 
+zachfan@Zachs-MacBook-Pro temp1 % touch fat fit feet
+zachfan@Zachs-MacBook-Pro temp1 % ls f?t
+fat	fit
+zachfan@Zachs-MacBook-Pro temp1 % ls f*t
+fat	feet	fit
+zachfan@Zachs-MacBook-Pro temp1 % ls f??t
+feet
+task 8 done
+
+zachfan@Zachs-MacBook-Pro temp1 % makedir temp3
+zsh: command not found: makedir
+zachfan@Zachs-MacBook-Pro temp1 % mkdir temp3
+zachfan@Zachs-MacBook-Pro temp1 % cd ~
+zachfan@Zachs-MacBook-Pro ~ % mv Desktop/temp1/temp3/ Desktop/temp1
+mv: Desktop/temp1/temp3/ and Desktop/temp1/temp3/ are identical
+zachfan@Zachs-MacBook-Pro ~ % mv Desktop/temp1/temp3/ Desktop/     
+#task 9 done
+
+
+zachfan@Zachs-MacBook-Pro ~ % ls Desktop
+1_Unix.txt
+Cannon Photos
+Caroline Transfer
+data
+Diffusion and Osmosis PreLab-1 Zach.pages
+Enzyme Pre-Lab S26.pages
+
+
+zachfan@Zachs-MacBook-Pro ~ % ls Desktop/
+1_Unix.txt
+Cannon Photos
+Caroline Transfer
+data
+Diffusion and Osmosis PreLab-1 Zach.pages
+Enzyme Pre-Lab S26.pages
+#task 10 done
+
+zachfan@Zachs-MacBook-Pro ~ % pwd
+/Users/zachfan
+zachfan@Zachs-MacBook-Pro ~ % cd Desktop 
+zachfan@Zachs-MacBook-Pro Desktop % rm "Task 5.txt"
+#Task 11 done
+
+zachfan@Zachs-MacBook-Pro Desktop % cp temp1 .
+cp: ./temp1 and temp1 are identical (not copied).
+zachfan@Zachs-MacBook-Pro Desktop % cp temp1 temp3
+cp: temp1 is a directory (not copied).
+zachfan@Zachs-MacBook-Pro Desktop % cp -R temp1 temp3
+zachfan@Zachs-MacBook-Pro Desktop % rm -R temp1 temp3
+#task 12 done
+
+zachfan@Zachs-MacBook-Pro Desktop % 
+Last login: Tue Sep 15 22:29:28 on ttys000
+zachfan@Zachs-MacBook-Pro ~ % cd Desktop 
+zachfan@Zachs-MacBook-Pro Desktop % mkdir data
+mkdir: data: File exists
+zachfan@Zachs-MacBook-Pro Desktop % mv At_proteins.fasta Data
+zachfan@Zachs-MacBook-Pro Desktop % ls Data/
+At_proteins.fasta
+# task 13 done
+
+zachfan@Zachs-MacBook-Pro Desktop % alias rm='rm -i'
+zachfan@Zachs-MacBook-Pro Desktop % rm -r unix
+examine files in directory unix? yes
+remove unix? no  
+zachfan@Zachs-MacBook-Pro Desktop % 
+
+Last login: Tue Sep 15 22:45:55 on ttys000
+zachfan@Zachs-MacBook-Pro ~ % cd Desktop 
+zachfan@Zachs-MacBook-Pro Desktop % rm -r unix
+#did not carry over
+#task 14 done 
+
+Last login: Mon Sep 21 15:15:18 on ttys001
+#task 15
+zachfan@Zachs-MacBook-Pro ~ % cd ~
+zachfan@Zachs-MacBook-Pro ~ % nano profile
+#making profile alias for ls =ls -l
+
+#task 16
+zachfan@Zachs-MacBook-Pro ~ % ls
+Applications		Downloads		Music			Public
+Desktop			Library			Pictures		SimUText 2025-2026
+Documents		Movies			profile
+zachfan@Zachs-MacBook-Pro ~ % source profile
+zachfan@Zachs-MacBook-Pro ~ % ls
+total 8
+drwx------@  10 zachfan  staff   320 Mar 15  2026 Applications
+drwx------+  39 zachfan  staff  1248 Sep 15 22:50 Desktop
+drwx------+   5 zachfan  staff   160 Feb  5  2026 Documents
+drwx------+ 198 zachfan  staff  6336 Sep 20 16:35 Downloads
+drwx------@  93 zachfan  staff  2976 Feb  5  2026 Library
+drwx------    4 zachfan  staff   128 May 26  2025 Movies
+drwx------+   6 zachfan  staff   192 Aug  3  2025 Music
+drwx------+   5 zachfan  staff   160 Jan 27  2026 Pictures
+-rw-r--r--    1 zachfan  staff    59 Sep 21 15:22 profile
+drwxr-xr-x+   4 zachfan  staff   128 May 24  2025 Public
+drwxr-xr-x@   3 zachfan  staff    96 Jan 12  2026 SimUText 2025-2026
+zachfan@Zachs-MacBook-Pro ~ % 
+
+
+#Task 17
+zachfan@Zachs-MacBook-Pro ~ % cd ~
+zachfan@Zachs-MacBook-Pro ~ % ls a
+ls: a: No such file or directory
+zachfan@Zachs-MacBook-Pro ~ % ls -a
+.			.DS_Store		.zsh_sessions		Downloads		Pictures
+..			.ssh			Applications		Library			profile
+.CFUserTextEncoding	.Trash			Desktop			Movies			Public
+.config			.zsh_history		Documents		Music			SimUText 2025-2026
+zachfan@Zachs-MacBook-Pro ~ % less profile 
+
+
+
+#useful command aliases
+alias rm='rm -i'
+alias ls='ls -l'
+
+(END)
+
+#Task 18
+zachfan@Zachs-MacBook-Pro ~ % cd Downloads 
+zachfan@Zachs-MacBook-Pro Downloads % ls
+1111Unit4Lec5 - Genetic Disease and Biotechnology.pdf						IMG_D91FEC6C2DA2-1.jpeg
+5760A9AF-F208-431E-9AEB-E5B98CEE08EA.JPG							IMG_E75913B8822E-1.jpeg
+978-3-031-29294-1_2.pdf										IMG_E9F932CC2AE8-1.jpeg
+
+zachfan@Zachs-MacBook-Pro Downloads % source ../profile 
+zachfan@Zachs-MacBook-Pro Downloads % ls
+total 3277640
+-rw-r--r--@  1 zachfan  staff    5614878 Apr  9 18:18 1111Unit4Lec5 - Genetic Disease and Biotechnology.pdf
+-rw-r--r--@  1 zachfan  staff     141934 Sep 14  2025 5760A9AF-F208-431E-9AEB-E5B98CEE08EA.JPG
+-rw-r--r--@  1 zachfan  staff     437254 Oct 20  2025 978-3-031-29294-1_2.pdf
+-rw-r--r--@  1 zachfan  staff      41765 Aug 14 13:15 Assignment 1.pdf
+zachfan@Zachs-MacBook-Pro Downloads % 
+
+#Task 19
+zachfan@Zachs-MacBook-Pro ~ % cd Desktop 
+zachfan@Zachs-MacBook-Pro Desktop % mkdir code
+zachfan@Zachs-MacBook-Pro Desktop % cd code
+zachfan@Zachs-MacBook-Pro code % nano hello.sh
+
+#task 20
+zachfan@Zachs-MacBook-Pro code % bash hello.sh
+Hello World
+#uhhh it worked
+zachfan@Zachs-MacBook-Pro code % ls -l
+total 8
+-rw-r--r--  1 zachfan  staff  44 Sep 21 16:01 hello.sh
+zachfan@Zachs-MacBook-Pro code % chmod u+x hello.sh
+zachfan@Zachs-MacBook-Pro code % ls -l             
+total 8
+-rwxr--r--  1 zachfan  staff  44 Sep 21 16:01 hello.sh
+#now there is an x
+zachfan@Zachs-MacBook-Pro code % bash hello.sh     
+Hello World
+
+#task 21
+zachfan@Zachs-MacBook-Pro code % ./hello.sh
+Hello World
+zachfan@Zachs-MacBook-Pro code % 
+
+#task 22
+zachfan@Zachs-MacBook-Pro ~ % nano screenshot_cleanup
+zachfan@Zachs-MacBook-Pro ~ % cd Desktop/code    
+zachfan@Zachs-MacBook-Pro code % ls
+hello.sh		screenshot_cleanup
+zachfan@Zachs-MacBook-Pro code % nano screenshot_cleanup.sh
+zachfan@Zachs-MacBook-Pro code % ls
+hello.sh		screenshot_cleanup	screenshot_cleanup.sh
+zachfan@Zachs-MacBook-Pro code % rm screenshot_cleanup
+#removed error file that didn't have .sh end
+zachfan@Zachs-MacBook-Pro code % bash screenshot_cleanup.sh
+mv: rename Screenshot*.png to Desktop/screenshots/: No such file or directory
+zachfan@Zachs-MacBook-Pro code % mkdir ../screenshots
+#file moved to didn't exist had to make it
+zachfan@Zachs-MacBook-Pro code % nano screenshot_cleanup.sh 
+zachfan@Zachs-MacBook-Pro code % bash screenshot_cleanup.sh 
+mv: rename Screenshot*.png to /Users/zachfan/Desktop/screenshots/Screenshot*.png: No such file or directory
+#was running it in subdirectory not in Desktop
+zachfan@Zachs-MacBook-Pro code % nano screenshot_cleanup.sh 
+zachfan@Zachs-MacBook-Pro code % bash screenshot_cleanup.sh 
+zachfan@Zachs-MacBook-Pro code % ls ~/Desktop
+1_Unix.txt						IMG_3533.JPG
+Cannon Photos						Northeastern University - International Village.m4a
+Caroline Transfer					NS
+code							screenshots
+data							Task 10-12.txt
+Diffusion and Osmosis PreLab-1 Zach.pages		Task 18.txt
+Enzyme Pre-Lab S26.pages				Tasks.txt
+Genome_analysis						untitled folder
+Huh shoo						Work stuff
+IMG_0916.JPG						zach.pdf
+
+#I forgot to do ls before running code but no screenshots after
+#task 23
+zachfan@Zachs-MacBook-Pro code % cat screenshot_cleanup.sh 
+#!/bin/bash
+mv ~/Desktop/Screenshot*.png ~/Desktop/screenshots/
+zachfan@Zachs-MacBook-Pro code % 
+
+

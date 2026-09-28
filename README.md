@@ -20,3 +20,13 @@ introductory bioinformatics course, including:
 Each folder corresponds to a unit of the course and contains scripts, 
 summary results, and documentation of the methods used.# bioinformatics-portfolio
 bioinformatics coursework portfolio - Zach Fan
+
+Unit submissions
+found at /courses/BIOL2406.21392/students/fan.zac/unit_submissions
+Each folder is going to be for each unit labled as such
+there will be subfolders for each part of the unit assignment containing the txt file and any files used in the assignment
+
+Unix assignment
+notes: 
+for the first bit of Unix_1 I labled when I completed the task not when the task starts this changes to be before the task is done halfway through and remains consistant from then on
+

@@ -1,0 +1,117 @@
+#task 1
+zachfan@Zachs-MacBook-Pro ~ % ls /usr/bin/c*  
+/usr/bin/c++			/usr/bin/compress
+/usr/bin/c++filt		/usr/bin/compression_tool
+
+zachfan@Zachs-MacBook-Pro ~ % ls /usr/bin/a*
+/usr/bin/aa			/usr/bin/as
+/usr/bin/actool			/usr/bin/asa
+/usr/bin/aea			/usr/bin/assetutil
+/usr/bin/afclip			/usr/bin/at
+
+
+zachfan@Zachs-MacBook-Pro ~ % ls /usr/bin/o*
+/usr/bin/objdump	/usr/bin/opendiff	/usr/bin/osadecompile
+/usr/bin/ocspcheck	/usr/bin/opensnoop	/usr/bin/osalang
+/usr/bin/od		/usr/bin/openssl	/usr/bin/osascript
+/usr/bin/odutil		/usr/bin/orbd		/usr/bin/otool
+/usr/bin/open		/usr/bin/osacompile
+
+zachfan@Zachs-MacBook-Pro ~ % ls /usr/bin/*[ac]*
+/usr/bin/aa				/usr/bin/macbinary
+/usr/bin/actool				/usr/bin/macerror
+/usr/bin/aea				/usr/bin/macerror5.34
+/usr/bin/afclip				/usr/bin/machine
+/usr/bin/afconvert			/usr/bin/macoserror
+
+
+#task 2
+[fan.zac@c0639 fan.zac]$ tail -n 2 /courses/BIOL2406.202710/students/fan.zac/bioinformatics-portfolio/unit_submissions/1_unix_unit/3_unix/untrimmed_fastq/SRR097977.fastq 
++SRR097977.249 209DTAAXX_Lenski2_1_7:8:3:441:292 length=36
+C:CCC::CCCCCCCC<8?6A:C28C<608'&&&,'$
+#final line just above
+
+#task 3
+[fan.zac@c0639 untrimmed_fastq]$ less SRR097977.fastq
+#CAC
+TGAAAAACAGAAAGGTAAATCAGTGAAATTTTTCAC
+
+#task 4
+[fan.zac@c0639 3_unix]$ mkdir backup
+[fan.zac@c0639 3_unix]$ cp untrimmed_fastq/*.fastq backup/
+[fan.zac@c0639 3_unix]$ ls backup/
+SRR097977.fastq  SRR098026.fastq
+[fan.zac@c0639 3_unix]$ cd backup/
+[fan.zac@c0639 backup]$ chmod 744 *fastq
+[fan.zac@c0639 backup]$ ls -l
+total 89
+-rwxr--r-- 1 fan.zac BIOL2406.202710-staff 47552 Sep 28 15:31 SRR097977.fastq
+-rwxr--r-- 1 fan.zac BIOL2406.202710-staff 43332 Sep 28 15:31 SRR098026.fastq
+[fan.zac@c0639 backup]$ 
+
+#task 5
+[fan.zac@c0639 untrimmed_fastq]$ grep -B1 "GNATNACCACTTCC" SRR098026.fastq 
+@SRR098026.245 HWUSI-EAS1599_1:2:1:2:801 length=35
+GNATNACCACTTCCAGTGCTGANNNNNNNGGGATG
+
+[fan.zac@c0639 untrimmed_fastq]$ grep -B1 AAGTT *.fastq
+SRR097977.fastq-@SRR097977.11 209DTAAXX_Lenski2_1_7:8:3:247:351 length=36
+SRR097977.fastq:GATTGCTTTAATGAAAAAGTCATATAAGTTGCCATG
+--
+SRR097977.fastq-@SRR097977.67 209DTAAXX_Lenski2_1_7:8:3:544:566 length=36
+SRR097977.fastq:TTGTCCACGCTTTTCTATGTAAAGTTTATTTGCTTT
+--
+SRR097977.fastq-@SRR097977.68 209DTAAXX_Lenski2_1_7:8:3:724:110 length=36
+SRR097977.fastq:TGAAGCCTGCTTTTTTATACTAAGTTTGCATTATAA
+--
+SRR097977.fastq-@SRR097977.80 209DTAAXX_Lenski2_1_7:8:3:258:281 length=36
+SRR097977.fastq:GTGGCGCTGCTGCATAAGTTGGGTTATCAGGTCGTT
+--
+SRR097977.fastq-@SRR097977.92 209DTAAXX_Lenski2_1_7:8:3:353:318 length=36
+SRR097977.fastq:GGCAAAATGGTCCTCCAGCCAGGCCAGAAGCAAGTT
+--
+SRR097977.fastq-@SRR097977.139 209DTAAXX_Lenski2_1_7:8:3:703:655 length=36
+SRR097977.fastq:TTTATTTGTAAAGTTTTGTTGAAATAAGGGTTGTAA
+--
+SRR097977.fastq-@SRR097977.238 209DTAAXX_Lenski2_1_7:8:3:592:919 length=36
+SRR097977.fastq:TTCTTACCATCCTGAAGTTTTTTCATCTTCCCTGAT
+--
+SRR098026.fastq-@SRR098026.158 HWUSI-EAS1599_1:2:1:1:1505 length=35
+SRR098026.fastq:GNNNNNNNNCAAAGTTGATCNNNNNNNNNTGTGCG
+[fan.zac@c0639 untrimmed_fastq]$ 
+
+#task 6
+
+[fan.zac@c0639 untrimmed_fastq]$ wc -l SRR098026.fastq
+996 SRR098026.fastq
+#249
+
+#task 7
+[fan.zac@c0639 3_unix]$ ./reader.sh 
+name=
+tester
+[fan.zac@c0639 3_unix]$ nano reader.sh 
+
+#task 8
+
+
+[fan.zac@c0639 3_unix]$ nano remover.sh 
+[fan.zac@c0639 3_unix]$ ./remover.sh 
+./remover.sh: line 1: $: command not found
+./remover.sh: line 4: .txt: command not found
+[fan.zac@c0639 3_unix]$ nano remover.sh 
+[fan.zac@c0639 3_unix]$ ./remover.sh 
+[fan.zac@c0639 3_unix]$ ls
+1.sh  backup  reader.sh  remover.sh  tester.txt  untrimmed_fastq  year.sh
+[fan.zac@c0639 3_unix]$ 
+
+#task 9
+Check the README
+
+#task 10 
+[fan.zac@c0639 untrimmed_fastq]$ nano bad-reads-script.sh 
+[fan.zac@c0639 untrimmed_fastq]$ bash bad-reads-script.sh 
+Script finished
+[fan.zac@c0639 untrimmed_fastq]$ ls
+bad-reads-script.sh  scripted_bad_reads.txt  SRR097977.fastq  SRR098026.fastq
+[fan.zac@c0639 untrimmed_fastq]$ 

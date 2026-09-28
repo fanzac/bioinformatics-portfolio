@@ -30,3 +30,4 @@ Unix assignment
 notes: 
 for the first bit of Unix_1 I labled when I completed the task not when the task starts this changes to be before the task is done halfway through and remains consistant from then on
 
+Exercise 9: 9/28/2026

@@ -1,0 +1,9 @@
+Size of genome:
+48,502 bp
+Structure (such as, linear or circular, how many chromosomes, how many plasmids):
+linear or circular depending on its life cycle phase. contains 1 single/double-stranded chromosome
+Estimated number of protein-coding genes:
+46 protein coding genes
+Where to access the genome sequence:
+https://github.com/BenLangmead/bowtie2/tree/master/example/reads
+reads 1 and 2

@@ -1,0 +1,9 @@
+Size of genome:
+depending on species 570Mb -3.5 Gb (in SRR60805881 it has 80 kbp)
+Structure (such as, linear or circular, how many chromosomes, how many plasmids):
+linear chromosomes (22 pairs) smaller circular mitochondrial genome
+Estimated number of protein-coding genes:
+20,000-30,000 protein coding genes
+Where to access the genome sequence:
+in the data section of our course on the cluster
+/courses/BIOL2406.202710/data/ 

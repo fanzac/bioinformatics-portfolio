@@ -1,0 +1,9 @@
+Size of genome:
+~ 1.52 Megabase pairs
+Structure (such as, linear or circular, how many chromosomes, how many plasmids):
+linear chromosome accompanied by linear and circular plasmids
+Estimated number of protein-coding genes:
+~ 1,291 to 1,391 unique protien coding genes
+Where to access the genome sequence:
+https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_000008685.2/
+GCF_000008685.2

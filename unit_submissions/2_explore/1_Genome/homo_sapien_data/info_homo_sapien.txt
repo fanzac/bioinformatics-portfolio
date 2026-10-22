@@ -1,0 +1,9 @@
+Size of genome:
+3.0-3.2 Gigabase pairs
+Structure (such as, linear or circular, how many chromosomes, how many plasmids):
+linear in nucleus circular in mitochondria. in 23 pairs of chromosomes 1 pair being sex chromosomes
+Estimated number of protein-coding genes:
+19,900-20,100 protein coding genes
+Where to access the genome sequence:
+https://ftp.ensembl.org/pub/release-115/gtf/homo_sapiens/Homo_sapiens.GRCh38.115.gtf.gz
+

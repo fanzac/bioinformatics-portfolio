@@ -1,0 +1,9 @@
+Size of genome:
+100.3-100.4 Megabase pairs
+Structure (such as, linear or circular, how many chromosomes, how many plasmids):
+linear double-stranded DNA in 6 holocentric chromosomes
+Estimated number of protein-coding genes:
+~19,900-20,500 protein coding genes
+Where to access the genome sequence:
+https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_000002985.6/
+GCF_000002985.6

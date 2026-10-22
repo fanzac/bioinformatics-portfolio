@@ -3,6 +3,7 @@
 **Name:** Zach Fan
 **Course:** BIOL2406 — Introduction to Bioinformatics  
 **Semester:** Spring 2026  
+**Github:** https://github.com/fanzac/bioinformatics-portfolio
 
 ## About This Portfolio
 

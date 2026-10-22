@@ -1,5 +1,8 @@
 Hello I will try my best to explain where everything is
 
+Github link:
+https://github.com/fanzac/bioinformatics-portfolio
+
 the text files that walk through what I did with comments are in the folder text files and named as 2.{module}.txt
 path:
 /courses/BIOL2406.202710/students/fan.zac/bioinformatics-portfolio/unit_submissions/2_explore/text_files

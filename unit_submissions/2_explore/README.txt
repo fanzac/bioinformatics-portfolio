@@ -19,6 +19,9 @@ path:
 /courses/BIOL2406.202710/students/fan.zac/bioinformatics-portfolio/unit_submissions/big_files_unit2
 these files will be messed with as a result of the other modules
 the info files will be in their respective folders named info_{creature}.txt
+these will be in the sub folders that hold all of their data so for example the path to the homo_sapien info is
+/courses/BIOL2406.202710/students/fan.zac/bioinformatics-portfolio/unit_submissions/2_explore/1_Genome/homo_sapien_data/info_homo_sapien.txt
+there are 5 each in the larger data folders.
 
 Module 2
 this module mainly dealt with the folder  lambda_data for lambda phages

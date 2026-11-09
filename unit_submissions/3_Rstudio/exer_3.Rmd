@@ -1,0 +1,84 @@
+# Exercise 3: tapply and sapply
+# Name: Zach Fan
+# Date: 11/3/26
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Load state data
+
+```{r}
+data(state)
+```
+
+# this data is stored in a slightly different way than other datasets we've used so far
+# run this line of code to avoid later confusion
+
+```{r}
+states = as.data.frame(state.x77) 
+```
+
+# 1: What is the average population, income, and area of all 50 states ins the `states` dataset?
+# Your code here:
+```{r}
+colMeans(states[, c("Population", "Income", "Area")])
+```
+# 2. What is the average area of the states from different regions of the country?
+# Hint: use the object state.region in your environment 
+# Your code here:
+```{r}
+tapply(states$Area, state.region, mean)
+```
+# 3. Plot a histogram for each column in the states data (Population, Income, Illiteracy etc.)
+# Your code here:
+```{r}
+par(mfrow = c(2, 4))
+for (col in names(states)) {hist(states[[col]], main = col, xlab = col)}
+par(mfrow = c(1, 1))
+```
+# 4. Let's assume that we don't want to live in a state with high illiteracy, high murder, and 
+# many freezing days; also assume that each of these factors contribute equally to our opinion 
+# (Illiteracy * Murder * Frost) = undesirable
+#  What 10 states should we avoid? # hint use prod(); and maybe order()
+# Your code here:
+```{r}
+undesirable <- apply(states[, c("Illiteracy", "Murder", "Frost")], 1, prod)
+states[order(undesirable, decreasing = TRUE)[1:10], ]
+```
+  
+# 5. Use sapply() to plot a histogram of the data below 4 times, in 4 different colors. 
+#  For extra style, title the plot by it's color, e.g. the red plot is titled "red"
+# Your code here:
+```{r}
+x <- rnorm(100)   # replace with the data from your worksheet
+
+par(mfrow = c(2, 2))
+sapply(c("red", "blue", "green", "purple"), function(color) {
+  hist(x, col = color, main = color)
+})
+par(mfrow = c(1, 1))
+```
+
+# 6. Standardize all the variables in the states dataset and save your answer to a new 
+# dataframe, states_standardized
+# Hint: to standardize a variable, you subtract the mean and divide by the standard deviation (sd)
+# Your code here:
+```{r}
+states_standardized <- as.data.frame(sapply(states, function(x) (x - mean(x)) / sd(x)))
+states_standardized
+```
+
+# 7. Create a histogram again for each variable in the states data, but this time label each 
+# histogram with the variable names when you plot
+# Hint: instead of using apply to iterate over the columns themselves, you can often iterate 
+# over the column names with sapply
+
+# Your code here:
+```{r}
+par(mfrow = c(2, 4))
+invisible(sapply(names(states), function(name) {
+  hist(states[[name]], main = name, xlab = name)
+}))
+par(mfrow = c(1, 1))
+```

@@ -1,0 +1,148 @@
+# Exercise 2: Practicing ggplot2
+# Name: Zach Fan
+# Date: 11/3/26
+
+```{r setup, include=FALSE}
+library(tidyverse)
+library(ggplot2)
+data(msleep)
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Load required libraries
+```{r}
+library(ggplot2)
+```
+
+# Load the msleep dataset
+```{r}
+data(msleep)
+```
+
+
+
+# ============================================================================
+# Question 1: Basic scatterplot with the msleep dataset
+# ============================================================================
+# Create a scatterplot showing the relationship between bodywt (body weight) 
+# and brainwt (brain weight). Add appropriate axis labels and change the 
+# theme to theme_classic().
+
+# Your code here:
+```{r}
+ggplot(msleep, aes(x = bodywt, y = brainwt)) +
+  geom_point() +
+  labs(x = "Body Weight (kg)",
+       y = "Brain Weight (kg)") +
+  theme_classic()
+```
+
+# ============================================================================
+# Question 2: Adding color by group
+# ============================================================================
+# Using the same variables from question 1 (bodywt and brainwt), color the 
+# points by vore (diet type). Make sure to convert vore to a factor.
+# Add a legend title that says "Diet Type".
+
+# Your code here:
+
+```{r}
+msleep$vore <- as.factor(msleep$vore)
+
+ggplot(msleep, aes(x = bodywt, y = brainwt, color = vore)) +
+  geom_point() +
+  labs(x = "Body Weight (kg)",
+       y = "Brain Weight (kg)",
+       color = "Diet Type") +
+  theme_classic()
+```
+
+
+# ============================================================================
+# Question 3: Scatterplot with a line of best fit
+# ============================================================================
+# Plot sleep_total against sleep_cycle. Add a linear regression line using 
+# geom_smooth(). Color the line red and use theme_minimal().
+
+# Your code here:
+
+```{r}
+ggplot(msleep, aes(x = sleep_cycle, y = sleep_total)) +
+  geom_point() +
+  geom_smooth(method = "lm", color = "red") +
+  labs(x = "Sleep Cycle Length (hours)",
+       y = "Total Sleep (hours)") +
+  theme_minimal()
+```
+
+
+# ============================================================================
+# Question 4: Faceted plots by group
+# ============================================================================
+# Create a scatterplot of sleep_total vs sleep_rem. Use facet_wrap() to 
+# create separate panels for each vore type. Add appropriate axis labels.
+
+# Your code here:
+
+```{r}
+ggplot(msleep, aes(x = sleep_total, y = sleep_rem)) +
+  geom_point() +
+  facet_wrap(~ vore) +
+  labs(x = "Total Sleep (hours)",
+       y = "REM Sleep (hours)") +
+  theme_classic()
+```
+
+
+# ============================================================================
+# Question 5: Exploring a new dataset
+# ============================================================================
+# Load the built-in iris dataset. Create a scatterplot showing Petal.Length 
+# vs Petal.Width. Color points by Species. Add a title to your plot using 
+# ggtitle("Iris Petal Dimensions"). Choose your favorite theme.
+
+# Load the iris dataset
+```{r}
+data(iris)
+```
+# Your code here:
+
+```{r}
+data(iris)
+
+ggplot(iris, aes(x = Petal.Length, y = Petal.Width, color = Species)) +
+  geom_point() +
+  ggtitle("Iris Petal Dimensions") +
+  labs(x = "Petal Length (cm)",
+       y = "Petal Width (cm)") +
+  theme_bw()
+```
+
+
+# ============================================================================
+# Bonus Challenge (Optional)
+# ============================================================================
+# Pick any two continuous variables from the msleep dataset and create a 
+# publication-quality plot with:
+# - Appropriate axis labels
+# - A theme of your choice
+# - Points colored by a grouping variable
+# - A descriptive title
+
+# Your code here:
+
+```{r}
+msleep %>%
+  filter(!is.na(vore), !is.na(brainwt)) %>%
+  ggplot(aes(x = bodywt, y = brainwt, color = vore)) +
+  geom_point(size = 2.5, alpha = 0.8) +
+  scale_x_log10() +
+  scale_y_log10() +
+  labs(title = "Brain Weight Scales with Body Weight Across Mammals",
+       subtitle = "Both axes are on a log scale",
+       x = "Body Weight (kg, log scale)",
+       y = "Brain Weight (kg, log scale)",
+       color = "Diet Type") +
+  theme_minimal(base_size = 13)
+```
+

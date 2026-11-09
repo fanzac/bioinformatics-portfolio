@@ -1,0 +1,10 @@
+This assignment had 4 modules
+each has its own folder or file labeled accordingly.
+these all can be accessed at 
+/courses/BIOL2406.202710/students/fan.zac/bioinformatics-portfolio/unit_submissions/3_Rstudio
+the first module has a zip file which will download a folder called home. due to where I was when I downloaded the file in R studio it has a lot of empty folders.
+keep clicking and you will reach a folder titled Zach which should contain all of the logs from when I completed Swirl. the complete path is
+home/fan.zac/R/x86_64-pc-linux-gnu-library/4.5/swirl/user_data/Zach/
+every other module has a dedicated folder containing both the RMD file and an HTML file.
+Exercise 1 and 2 are for module 3
+Exercise 3 is for module 4
